@@ -182,15 +182,15 @@
   },
   "tasksRunnerOptions": {
     "default": {
-      "runner": "@nrwl/nx-cloud",
+      "runner": "@apployees-nx/level-task-runner",
       "options": {
-        "accessToken": "YWM3NWZiNmItZWUzMS00ZmMyLWJlODQtZGFlNGMxN2I5NmVlfHJlYWQtd3JpdGU=",
-        "cacheableOperations": [
-          "build",
-          "test",
-          "lint",
-          "e2e"
-        ]
+        "cacheableOperations": ["build", "test", "lint"],
+        "levelTaskRunnerOptions": {
+          "driver": "redisdown",
+          "name": "nx-cache",
+          "host": "localhost",
+          "port": 6379
+        }
       }
     }
   },
